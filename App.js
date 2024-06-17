@@ -4,7 +4,7 @@ import { WebView } from 'react-native-webview';
 import { buscarVideos } from './youtube';
 
 export default function App() {
-  const [pesquisa, setpesquisa] = useState(''); 
+  const [pesquisa, setpesquisa] = useState('');
   const [videos, setVideos] = useState([]);
 
   const pesquisar = async () => {
@@ -31,7 +31,6 @@ export default function App() {
           </View>
         ))}
       </ScrollView>
-      {/* </KeyboardAvoidingView> apenas para localizar */}
       <View style={estilos.containerPesquisa}>
         <TextInput
           style={estilos.entrada}
@@ -58,23 +57,22 @@ const estilos = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     padding: 10,
-    backgroundColor: '#6200ee',
-    borderRadius: 8,
-    margin: 20,
+    backgroundColor: '#fff',
   },
   entrada: {
-    height: 40,
     flex: 1,
-    backgroundColor: '#fff',
-    borderRadius: 4,
+    height: 40,
+    borderWidth: 1,
+    borderColor: '#ccc',
+    borderRadius: 8,
     paddingHorizontal: 10,
-    marginRight: 10,
+    backgroundColor: '#fff',
   },
   botao: {
-    backgroundColor: '#03dac5',
-    paddingVertical: 10,
-    paddingHorizontal: 20,
-    borderRadius: 4,
+    backgroundColor: '#007bff',
+    padding: 10,
+    borderRadius: 8,
+    marginLeft: 10,
   },
   textoBotao: {
     color: '#fff',
@@ -82,29 +80,16 @@ const estilos = StyleSheet.create({
   },
   scrollView: {
     flex: 1,
-    paddingHorizontal: 20,
   },
   containerVideo: {
     marginBottom: 20,
-    backgroundColor: '#fff',
-    borderRadius: 8,
-    padding: 15,
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-    elevation: 5,
   },
   tituloVideo: {
-    fontSize: 18,
+    fontSize: 16,
     fontWeight: 'bold',
     marginBottom: 10,
   },
   webview: {
-    width: '100%',
-    aspectRatio: 16 / 9,
-  } 
+    height: 200,
+  },
 });
